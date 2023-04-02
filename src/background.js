@@ -1,8 +1,17 @@
-const operators = require('./operators');
+const postService = require('./services/post.service');
+const storageService = require('./services/storage.service');
+const isNil = require('./utilities/is-nil');
 
-operators.onRuntimeMessage({
-  update: (context, sendRes) => {
-    console.log(JSON.stringify(context), 'background context');
-    sendRes({ success: true });
+postService.onRuntimeMessage({
+  saveAuctionPage: (context, sendRes) => {
+    if (!isNil(context?.id) && !isNil(context?.bodyHtml)) {
+      storageService.setValue(`${context.id}-${Date.now()}`, context.bodyHtml);
+    }
+    sendRes();
+  },
+  getAuctionPages: (context, sendRes) => {
+    Promise.all(storageService.keys.map(key => storageService.getValue(key))).then(res =>
+      sendRes(res)
+    );
   }
 });
