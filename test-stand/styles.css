@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 1200px;
+  background: navajowhite;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.block {
+  width: 50px;
+  height: 50px;
+  background: rosybrown;
+}

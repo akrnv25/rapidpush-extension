@@ -6,8 +6,16 @@
   "scripts": {
     "build": "webpack"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akrnv25/rapidpush-extension.git"
+  },
   "author": "akrnv25",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akrnv25/rapidpush-extension/issues"
+  },
+  "homepage": "https://github.com/akrnv25/rapidpush-extension#readme",
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
