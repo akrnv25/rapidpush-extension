@@ -12,6 +12,7 @@ function initMenuView() {
   addDataView.classList.add('hidden');
   const addDataButton = document.getElementById('add-data-button');
   addDataButton.onclick = initAddDataView;
+  const listButton = document.getElementById('list-button');
   const downloadPagesButton = document.getElementById('download-pages-button');
   downloadPagesButton.onclick = async () => {
     await postService.sendRuntimeMessage('downloadAuctionPages');
