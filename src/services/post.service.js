@@ -23,9 +23,10 @@ class PostService {
     chrome.runtime.onMessage.addListener((message, sender, sendRes) => {
       if (message?.primaryKey === config.primaryKey && message?.type) {
         if (!isNil(handlers) && !isNil(handlers[message.type])) {
-          handlers[message.type](message.context, resContext =>
-            sendRes({ primaryKey: message.primaryKey, type: message.type, context: resContext })
-          );
+          handlers[message.type](message.context, resContext => {
+            console.log(resContext, 'rescontext');
+            sendRes({ primaryKey: message.primaryKey, type: message.type, context: resContext });
+          });
           return true;
         }
       }
