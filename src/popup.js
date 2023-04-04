@@ -13,9 +13,13 @@ function initMenuView() {
   const addDataButton = document.getElementById('add-data-button');
   addDataButton.onclick = initAddDataView;
   const listButton = document.getElementById('list-button');
-  const downloadPagesButton = document.getElementById('download-pages-button');
-  downloadPagesButton.onclick = async () => {
-    await postService.sendRuntimeMessage('downloadAuctionPages');
+  const toConsolePagesButton = document.getElementById('to-console-pages-button');
+  toConsolePagesButton.onclick = async () => {
+    await postService.sendRuntimeMessage('toConsoleAuctionPages');
+  };
+  const clearStorageButton = document.getElementById('clear-storage-button');
+  clearStorageButton.onclick = async () => {
+    await postService.sendRuntimeMessage('clearStorage');
   };
 }
 

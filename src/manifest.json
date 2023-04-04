@@ -23,8 +23,6 @@
     "storage",
     "nativeMessaging",
     "tabs",
-    "alarms",
-    "downloads",
     "unlimitedStorage"
   ],
   "background": {

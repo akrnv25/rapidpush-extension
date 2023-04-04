@@ -29,6 +29,7 @@ class StorageService {
   }
 
   removeValue(key) {
+    this._keys = this._keys.filter(_key => _key !== key);
     chrome.storage.local.remove(`${config.primaryKey}/${key}`);
   }
 }
