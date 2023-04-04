@@ -10,13 +10,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
   saveAuctionPage(id);
+  let countSaving = 0;
   setInterval(() => {
     const countdown = document.getElementById('countdown');
     console.log('countdown: ', countdown);
-    const isCountdownFinished = !countdown.innerHTML;
+    let isCountdownFinished;
+    if (isNil(countdown) || !countdown.innerHTML) {
+      isCountdownFinished = true;
+    } else {
+      const amounts = Array.from(countdown.querySelectorAll('.countdown-amount'));
+      isCountdownFinished = amounts.every(amount => !amount.innerText || +amount.innerText === 0);
+    }
     console.log('isCountdownFinished: ', isCountdownFinished);
-    if (isCountdownFinished) {
+    if (isCountdownFinished && countSaving < 10) {
       saveAuctionPage(id);
+      countSaving += 1;
     }
   }, 500);
 });
