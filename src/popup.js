@@ -1,38 +1,40 @@
 const postService = require('./services/post.service');
 const manifest = require('./manifest.json');
+const isNil = require('./utilities/is-nil');
 
-const menuView = document.getElementById('menu-view');
-const addDataView = document.getElementById('add-data-view');
+const notFoundView = document.getElementById('not-found-view');
+const mainView = document.getElementById('main-view');
+const editView = document.getElementById('edit-view');
 
-patchVersion();
-initMenuView();
+(async () => {
+  patchVersion();
+  const idRes = await postService.sendRuntimeMessage('getActiveAuctionId');
+  const id = idRes?.context?.id;
+  if (isNil(id)) {
+    initNotFoundView();
+    return;
+  }
+  const dataRes = await postService.sendRuntimeMessage('getAuctionData', { id });
+  const data = dataRes?.context?.data;
+  isNil(data) ? initEditView() : initMainView();
+})();
 
-function initMenuView() {
-  menuView.classList.remove('hidden');
-  addDataView.classList.add('hidden');
-  const addDataButton = document.getElementById('add-data-button');
-  addDataButton.onclick = initAddDataView;
-  const listButton = document.getElementById('list-button');
-  const toConsolePagesButton = document.getElementById('to-console-pages-button');
-  toConsolePagesButton.onclick = async () => {
-    await postService.sendRuntimeMessage('toConsoleAuctionPages');
-  };
-  const clearStorageButton = document.getElementById('clear-storage-button');
-  clearStorageButton.onclick = async () => {
-    await postService.sendRuntimeMessage('clearStorage');
-  };
+function initNotFoundView() {
+  mainView.classList.add('hidden');
+  editView.classList.add('hidden');
+  notFoundView.classList.remove('hidden');
 }
 
-function initAddDataView() {
-  addDataView.classList.remove('hidden');
-  menuView.classList.add('hidden');
-  const typeControl = document.getElementById('type-control');
-  const idControl = document.getElementById('ide-control');
-  const priceControl = document.getElementById('price-control');
-  const volumeControl = document.getElementById('volume-control');
-  const saveButton = document.getElementById('save-button');
-  const menuButton = document.getElementById('menu-button');
-  menuButton.onclick = initMenuView;
+function initEditView() {
+  mainView.classList.add('hidden');
+  editView.classList.remove('hidden');
+  notFoundView.classList.add('hidden');
+}
+
+function initMainView() {
+  mainView.classList.remove('hidden');
+  editView.classList.add('hidden');
+  notFoundView.classList.add('hidden');
 }
 
 function patchVersion() {
