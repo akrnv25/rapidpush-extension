@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Закрытый аукцион №94017 (3 апреля 2023 г. в 12:00)</title>
+    <title>Закрытый аукцион №94019 (5 апреля 2023 г. в 12:00)</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Cache-control" content="no-cache" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="/Scripts/font-awesome/css/font-awesome-ie7.min.css" rel="stylesheet" />
     <link href="/Scripts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <script src="../Scripts/jquery-2.2.3.js" type="text/javascript"></script>
@@ -27,12 +28,6 @@
     <script src="/Scripts/loading/jquery.loading.min.js"></script>
     <script src="/Scripts/JSViewUserControl.js"></script>
     <link href="../App_Themes/EOIL/EOIL.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="/Scripts/loading/jquery.loading.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="/Scripts/loading/jquery.loading.min.css" />
-    <script type="text/javascript" src="/Scripts/loading/jquery.loading.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="/Scripts/loading/jquery.loading.min.css" />
-    <script type="text/javascript" src="/Scripts/loading/jquery.loading.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="/Scripts/loading/jquery.loading.min.css" />
   </head>
   <body>
     <div class="loading-overlay loading-theme-light" style="display: none">
@@ -46,11 +41,11 @@
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
           <div class="caption" role="tab" id="headingOne">
-            Закрытый аукцион №94017 (3 апреля 2023 г. в 12:00)
+            Закрытый аукцион №94019 (5 апреля 2023 г. в 12:00)
             <h5 style="display: inline">
-              <small id="text-auction-state" class="text-warning">
+              <small id="text-auction-state">
                 <i class="icon-circle"></i>
-                <span>В ожидании</span>
+                <span></span>
               </small>
             </h5>
             <div class="pull-right" style="margin-left: 10px">
@@ -74,13 +69,10 @@
                 <div class="btn-group">
                   <button
                     data-bind="attr: { title: started() ? 'Выключить' : 'Включить' }, event: { click: switchLog } "
-                    title="Включить"
+                    title="Сообщения"
                     class="btn btn-default btn-xs"
                   >
-                    <i
-                      class="icon-comments-alt text-danger"
-                      data-bind="css: $root.popoverBtnClass"
-                    ></i>
+                    <i class="icon-comments-alt" data-bind="css: $root.popoverBtnClass"></i>
                   </button>
                   <button
                     id="popoverBtn"
@@ -129,7 +121,7 @@
                     elementId: 'Log',
                     options: {
                       url: '/Auction/GetLogMessages',
-                      data: { tradeId: 94017, tickAfter: null }
+                      data: { tradeId: 94019, tickAfter: null }
                     },
                     loginUrl: '/Login/Index'
                   });
@@ -187,7 +179,7 @@
                     <small>Стартовая цена:</small>
                   </label>
                   <span>
-                    <span style="font-weight: bold"> 4572 руб/куб. м.</span>
+                    <span style="font-weight: bold"> 4130 руб/куб. м.</span>
                     <span style="font-size: 11px; color: #777777"> с шагом 1 руб </span>
                   </span>
                 </div>
@@ -195,13 +187,13 @@
                   <label class="control-label">
                     <small>Мин. цена:</small>
                   </label>
-                  <span> 4343 руб/куб. м. </span>
+                  <span> 3924 руб/куб. м. </span>
                 </div>
                 <div class="row">
                   <label class="control-label">
                     <small>Макс. цена:</small>
                   </label>
-                  <span> 4801 руб/куб. м. </span>
+                  <span> 4336 руб/куб. м. </span>
                 </div>
                 <div class="row">
                   <label class="control-label">
@@ -259,7 +251,7 @@
                   </label>
                   <span class="text-warning">
                     <strong> 12:00 - 12:30 </strong>
-                    3 апреля 2023 г.
+                    5 апреля 2023 г.
                   </span>
                 </div>
               </div>
@@ -323,34 +315,7 @@
               id="AuctionArea"
               class="container-fluid"
               data-bind="template: { name: DisplayTemplate, afterRender: afterRenderTemplate }"
-            >
-              <div class="row">
-                <div class="col-xs-6 col-xs-offset-3">
-                  <div class="panel panel-default">
-                    <div class="panel-heading"><strong>До начала аукциона осталось</strong></div>
-                    <div class="row">
-                      <div id="countdown" class="countdown is-countdown">
-                        <span class="countdown-row countdown-show4"
-                          ><span class="countdown-section"
-                            ><span class="countdown-amount">1</span
-                            ><span class="countdown-period">День</span></span
-                          ><span class="countdown-section"
-                            ><span class="countdown-amount">15</span
-                            ><span class="countdown-period">Часов</span></span
-                          ><span class="countdown-section"
-                            ><span class="countdown-amount">50</span
-                            ><span class="countdown-period">Минут</span></span
-                          ><span class="countdown-section"
-                            ><span class="countdown-amount">58</span
-                            ><span class="countdown-period">Секунд</span></span
-                          ></span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ></div>
             <script id="MainTemplate" type="text/template">
               <div class="row">
 
@@ -586,14 +551,14 @@
                   url: '/Auction/GetAuctionData',
                   data: {
                     Auction: {
-                      Id: 94017,
-                      Price: 4572.0,
+                      Id: 94019,
+                      Price: 4130.0,
                       Volume: 2420.0,
                       VolumeMin: 1.0,
-                      PriceMin: 4343.0,
-                      PriceMax: 4801.0,
-                      StartDate: '2023-04-03T12:00:00.0000000+03:00',
-                      EndDate: '2023-04-03T12:30:00.0000000+03:00',
+                      PriceMin: 3924.0,
+                      PriceMax: 4336.0,
+                      StartDate: '2023-04-05T12:00:00.0000000+03:00',
+                      EndDate: '2023-04-05T12:30:00.0000000+03:00',
                       BidAsk: true,
                       HasAccess: true,
                       LotCount: 2420.0,
@@ -665,7 +630,7 @@
                           >
                             <a
                               style="color: black"
-                              data-bind="text: TR.Organization.Name, attr: { href: $root.ProtocolUrl + '&amp;forOrgId=' + TR.Organization.Id() }"
+                              data-bind="text: TR.Organization.Name, attr: { href: $root.ProtocolUrl + '&forOrgId=' + TR.Organization.Id() }"
                               target="_blank"
                             >
                             </a>
@@ -786,13 +751,13 @@
                 options: {
                   url: '/Auction/GetTradeResults',
                   data: {
-                    Auction: { Id: 94017, Price: 4572.0, Volume: 2420.0, TradeResultTypeId: 2 },
+                    Auction: { Id: 94019, Price: 4130.0, Volume: 2420.0, TradeResultTypeId: 2 },
                     AutoFill: false,
                     HasExtendedAccess: false,
                     CurrentUserIsOwner: false,
                     ForEdit: false,
                     Unit: 'куб. м.',
-                    ProtocolUrl: '/Auction/Protocol?Id=94017',
+                    ProtocolUrl: '/Auction/Protocol?Id=94019',
                     ShowProtocolLink: true
                   }
                 },
