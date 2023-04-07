@@ -8,7 +8,28 @@
   <link rel="stylesheet" href="./popup.css">
 </head>
 <body>
-<div>Content</div>
+<div class="container">
+  <div id="menu-view" class="view hidden">
+    <button id="add-data-button" class="button margin-bottom-m">Добавить аукцион</button>
+    <button id="list-button" class="button margin-bottom-m">Список аукционов</button>
+    <button id="clear-storage-button" class="button margin-bottom-m">Удалить все данные</button>
+    <button id="to-console-pages-button" class="button">Код страниц в консоль</button>
+  </div>
+  <div id="add-data-view" class="view hidden">
+    <select id="type-control" class="control margin-bottom-m">
+      <option value="gaseous">Газообразный</option>
+      <option value="fluid">Жидкий</option>
+    </select>
+    <input id="id-control" class="control margin-bottom-m" type="text" placeholder="Введите ID аукциона">
+    <input id="price-control" class="control margin-bottom-m" type="text" placeholder="Введите стоимость">
+    <input id="volume-control" class="control margin-bottom-m" type="text" placeholder="Введите объем">
+    <button id="save-button" class="button margin-bottom-m">Сохранить данные</button>
+    <button id="menu-button" class="button">Вернуться в меню</button>
+  </div>
+  <div class="footer">
+    <span id="version-box" class="footer-text"></span>
+  </div>
+</div>
 <script src="./popup.js"></script>
 </body>
 </html>

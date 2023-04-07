@@ -1,4 +1,4 @@
-# Repidpush Extension
+# Rapidpush Extension
 
 ### How to get project files
 * Download and install [Node.js](https://nodejs.org/en/)

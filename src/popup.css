@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2em;
+  color: #0b546a;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  background: #ffffff;
+  width: 360px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.view {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 16px;
+}
+
+.footer {
+  width: 100%;
+  padding: 4px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #b5cbd2;
+}
+
+.footer-text {
+  font-size: 10px;
+  line-height: 1em;
+  color: #0b546a;
+}
+
+.control {
+  width: 100%;
+  height: 40px;
+  border: none;
+  background: #ffffff;
+  border-bottom: 2px solid #b5cbd2;
+  padding: 0 0 2px 0;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin-bottom: 16px;
+  color: #0b546a;
+}
+
+.control::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2em;
+  color: #b5cbd2;
+}
+
+.control:focus {
+  border: none;
+  border-bottom: 2px solid #0b546a;
+  transition: border-bottom-color 200ms ease-out;
+}
+
+.control:hover {
+  border: none;
+  border-bottom: 2px solid #0b546a;
+  transition: border-bottom-color 200ms ease-out;
+}
+
+.control:disabled,
+.control[disabled] {
+  border-bottom: 2px solid #b5cbd2;
+}
+
+.button {
+  width: 100%;
+  background: #b5cbd2;
+  color: #0b546a;
+  font-size: 14px;
+  line-height: 1.2em;
+  font-weight: 500;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus,
+.button:active,
+.button:hover,
+.button:focus,
+.button:active {
+  background: #0b546a;
+  color: #ffffff;
+  transition: background-color 200ms ease-out;
+}
+
+.button:disabled,
+.button[disabled],
+.button:disabled,
+.button[disabled] {
+  background: #b5cbd2;
+  color: #0b546a;
+}
+
+.hidden {
+  display: none;
+}
+
+.margin-bottom-s {
+  margin-bottom: 4px;
+}
+
+.margin-bottom-m {
+  margin-bottom: 8px;
+}
+
+.margin-bottom-l {
+  margin-bottom: 16px;
+}

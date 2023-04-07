@@ -18,7 +18,13 @@
     "48": "./assets/icon48.png",
     "128": "./assets/icon128.png"
   },
-  "permissions": ["activeTab", "storage", "nativeMessaging", "tabs", "alarms"],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "nativeMessaging",
+    "tabs",
+    "unlimitedStorage"
+  ],
   "background": {
     "service_worker": "background.js"
   },
