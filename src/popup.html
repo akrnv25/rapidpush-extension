@@ -9,22 +9,29 @@
 </head>
 <body>
 <div class="container">
-  <div id="menu-view" class="view hidden">
-    <button id="add-data-button" class="button margin-bottom-m">Добавить аукцион</button>
-    <button id="list-button" class="button margin-bottom-m">Список аукционов</button>
-    <button id="clear-storage-button" class="button margin-bottom-m">Удалить все данные</button>
-    <button id="to-console-pages-button" class="button">Код страниц в консоль</button>
-  </div>
-  <div id="add-data-view" class="view hidden">
+  <div id="edit-view" class="view hidden">
+    <label for="id-control" class="label">ID аукциона</label>
+    <input id="id-control" class="control margin-bottom-m" type="text" placeholder="Введите значение" readonly>
+    <label for="type-control" class="label">Тип аукциона</label>
     <select id="type-control" class="control margin-bottom-m">
       <option value="gaseous">Газообразный</option>
-      <option value="fluid">Жидкий</option>
     </select>
-    <input id="id-control" class="control margin-bottom-m" type="text" placeholder="Введите ID аукциона">
-    <input id="price-control" class="control margin-bottom-m" type="text" placeholder="Введите стоимость">
-    <input id="volume-control" class="control margin-bottom-m" type="text" placeholder="Введите объем">
-    <button id="save-button" class="button margin-bottom-m">Сохранить данные</button>
-    <button id="menu-button" class="button">Вернуться в меню</button>
+    <label for="lots-control" class="label">Лоты</label>
+    <input id="lots-control" class="control margin-bottom-m" type="number" placeholder="Введите значение">
+    <label for="price-control" class="label">Цена</label>
+    <input id="price-control" class="control margin-bottom-m" type="number" placeholder="Введите значение">
+    <button id="save-button" class="button">Сохранить</button>
+    <div id="error-box" class="error hidden">Заполните все поля</div>
+  </div>
+  <div id="main-view" class="view hidden">
+    <div class="margin-bottom-m">ID аукциона: <span id="id-box"></span></div>
+    <div class="margin-bottom-m">Тип аукциона: <span id="type-box"></span></div>
+    <div class="margin-bottom-m">Лоты: <span id="lots-box"></span></div>
+    <div class="margin-bottom-m">Цена: <span id="price-box"></span></div>
+    <button id="edit-button" class="button">Редактировать</button>
+  </div>
+  <div id="not-found-view" class="view hidden">
+    Откройте страницу аукциона
   </div>
   <div class="footer">
     <span id="version-box" class="footer-text"></span>
