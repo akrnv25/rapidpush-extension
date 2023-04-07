@@ -7,7 +7,8 @@ postService.onRuntimeMessage({
   toConsoleAuctionPages,
   clearStorage,
   getActiveAuctionId,
-  getAuctionData
+  getAuctionData,
+  saveAuctionData
 });
 
 function saveAuctionPage(context, sendRes) {
@@ -68,4 +69,12 @@ async function getAuctionData(context, sendRes) {
   } catch (err) {
     sendRes({ data: null });
   }
+}
+
+function saveAuctionData(context, sendRes) {
+  const data = context?.data;
+  if (!isNil(data)) {
+    storageService.setValue(`data-${data.id}`, data);
+  }
+  sendRes();
 }

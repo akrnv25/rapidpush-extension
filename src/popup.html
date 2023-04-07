@@ -10,17 +10,18 @@
 <body>
 <div class="container">
   <div id="edit-view" class="view hidden">
-    <label class="label">ID аукциона</label>
+    <label for="id-control" class="label">ID аукциона</label>
     <input id="id-control" class="control margin-bottom-m" type="text" placeholder="Введите значение" readonly>
-    <label class="label">Тип аукциона</label>
+    <label for="type-control" class="label">Тип аукциона</label>
     <select id="type-control" class="control margin-bottom-m">
       <option value="gaseous">Газообразный</option>
     </select>
-    <label class="label">Лоты</label>
+    <label for="lots-control" class="label">Лоты</label>
     <input id="lots-control" class="control margin-bottom-m" type="number" placeholder="Введите значение">
-    <label class="label">Цена</label>
+    <label for="price-control" class="label">Цена</label>
     <input id="price-control" class="control margin-bottom-m" type="number" placeholder="Введите значение">
     <button id="save-button" class="button">Сохранить</button>
+    <div id="error-box" class="error hidden">Заполните все поля</div>
   </div>
   <div id="main-view" class="view hidden">
     <div class="margin-bottom-m">ID аукциона: <span id="id-box"></span></div>

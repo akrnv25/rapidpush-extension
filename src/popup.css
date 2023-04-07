@@ -14,7 +14,7 @@ html, body {
 
 .container {
   background: #ffffff;
-  width: 360px;
+  width: 300px;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   display: flex;
   flex-direction: column;
@@ -138,4 +138,14 @@ html, body {
 
 .margin-bottom-l {
   margin-bottom: 16px;
+}
+
+.error {
+  color: #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: #ff033e;
 }
