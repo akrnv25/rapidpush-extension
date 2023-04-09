@@ -4,7 +4,7 @@ const isNil = require('./utilities/is-nil');
 console.log('Content script connected');
 document.addEventListener('DOMContentLoaded', async () => {
   const searchParams = new URL(document.location).searchParams;
-  const id = searchParams.get('id');
+  const id = searchParams.get('Id');
   if (isNil(id)) {
     console.log('ID is undefined');
     return;

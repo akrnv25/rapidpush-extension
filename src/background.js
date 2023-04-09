@@ -46,7 +46,7 @@ async function getActiveAuctionId(context, sendRes) {
       throw new Error('Active tab URL is undefined');
     }
     const searchParams = new URL(url).searchParams;
-    const id = searchParams.get('id');
+    const id = searchParams.get('Id');
     if (isNil(id)) {
       throw new Error('Auction ID is undefined');
     }

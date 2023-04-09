@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Repidpush",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "action": {
     "default_title": "Repidpush",
     "default_popup": "popup.html",
@@ -30,7 +30,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://localhost/*"],
+      "matches": ["https://eoil.ru/Auction/DetailsNew*"],
       "js": ["content.js"],
       "run_at": "document_start"
     }
