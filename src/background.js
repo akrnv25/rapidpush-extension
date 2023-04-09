@@ -8,7 +8,8 @@ postService.onRuntimeMessage({
   clearStorage,
   getActiveAuctionId,
   getAuctionData,
-  saveAuctionData
+  saveAuctionData,
+  removeAuctionData
 });
 
 function saveAuctionPage(context, sendRes) {
@@ -75,6 +76,14 @@ function saveAuctionData(context, sendRes) {
   const data = context?.data;
   if (!isNil(data)) {
     storageService.setValue(`data-${data.id}`, data);
+  }
+  sendRes();
+}
+
+function removeAuctionData(context, sendRes) {
+  const id = context?.id;
+  if (!isNil(id)) {
+    storageService.removeValue(`data-${id}`);
   }
   sendRes();
 }

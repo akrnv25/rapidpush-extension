@@ -48,6 +48,80 @@
                 <span></span>
               </small>
             </h5>
+
+            <!-- Table from template start -->
+            <table class="table table-condensed table-striped text-center">
+              <colgroup>
+                <col style="width: 25%;" />
+                <col style="width: 20%;" />
+                <col style="width: 15%;" />
+                <col style="width: 20%;" />
+                <col style="width: 20%;" />
+              </colgroup>
+              <thead>
+              <!-- ko if: IsActive() -->
+              <tr data-bind="with: NowData">
+                <th title="Текущее время" class="text-center">
+                  <span id="clock"></span>
+                  <small id="countdownClock" class="text-muted"></small>
+                </th>
+                <th title="Количество лотов" >
+                  <input type="text"  class="form-control text-center input-xs" data-bind="textInput: LotCount, event: { focus: $root.focusLotCount, blur: $root.blurLotCount }"/>
+                </th>
+                <th title="Текущий объём" class="text-center text-middle text-normal" data-bind="text: CurrentVolume">
+                </th>
+
+                <th colspan="3" class="col-xs-12">
+                  <div class="input-group input-group-xs">
+                            <span class="input-group-btn" data-bind="visible: !$root.CurrentUserIsOwner">
+                                <button id="manualEntryBtn" data-toggle="button" data-placement="top" title="Вкл./откл. автоторгов" class="btn btn-default btn-xs" type="button" data-bind="click: onManualEntry">
+                                    <i class="icon-edit" data-bind="css: { 'text-success': manualEntry }"></i>
+                                </button>
+                            </span>
+                    <input type="text" class="form-control text-center input-xs" data-bind="textInput: CurrentPrice, event: { focus: $root.focusCurrentPrice, blur: $root.blurCurrentPrice }" title="Ставка"/>
+                    <span class="input-group-btn" data-bind="visible: !$root.CurrentUserIsOwner">
+                                <button data-toggle="tooltip" data-placement="top" title="Подтвердить ордер" class="btn btn-default btn-xs" type="button" data-bind="click: $root.bid, disable: !isValid() || $root.bidding()">
+
+                                    <img style="width: 12px; height: 12px;" src="/Images/enter-16.png" />
+                                </button>
+                            </span>
+                  </div>
+
+                </th>
+              </tr>
+              <!-- /ko -->
+              <tr  data-bind="with: TotalOfUser">
+                <th class="text-center">
+                  Время<br/>
+                  <small class="text-success">Итого:</small>
+                </th>
+                <th class="text-center">
+                  Лоты<br/>
+                  <small data-bind="text: LotCount" class="text-success"></small>
+                </th>
+                <th class="text-center">
+                  Объём<br/>
+                  <small data-bind="text: Volume" class="text-success"></small>
+                </th>
+                <th class="text-center">
+                  Цена<br/>
+                  <small data-bind="text: Price" class="text-success"></small>
+                </th>
+                <th class="text-center">
+                  Ставка<br/>
+                  <small data-bind="text: BidPrice" class="text-success"></small>
+                </th>
+                <th class="text-center">
+                  ±<br/>
+                  <small>&nbsp;</small>
+                </th>
+              </tr>
+              </thead>
+              <tbody data-bind="template: { name:  'BidRowTemplate', foreach: Bids } ">
+
+              </tbody>
+            </table>
+            <!-- Table from template end -->
             <div class="pull-right" style="margin-left: 10px">
               <a
                 data-toggle="collapse"
