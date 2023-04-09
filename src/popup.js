@@ -73,6 +73,11 @@ function initMainView(data) {
   priceBox.innerText = data.price ?? '';
   const editButton = document.getElementById('edit-button');
   editButton.onclick = () => initEditView(data);
+  const removeButton = document.getElementById('remove-button');
+  removeButton.onclick = async () => {
+    await postService.sendRuntimeMessage('removeAuctionData', { id: data.id });
+    initEditView({ id: data.id });
+  };
 }
 
 function isAuctionDataValid(data) {
