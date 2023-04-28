@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log('ID is undefined');
     return;
   }
+  const dataRes = await postService.sendRuntimeMessage('getAuctionData', { id });
+  const data = dataRes?.context?.data;
+  if (!isNil(data?.pushTimestamp)) {
+    console.log('Auction data pushed');
+    console.log('Pushed data: ', data);
+    return;
+  }
   await parseAuctionData(id);
   const intervalId = setInterval(async () => {
     const isCountdownFinished = checkCountdownFinished();
@@ -18,7 +25,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (pushedData) {
         console.log('Pushed data: ', pushedData);
         clearInterval(intervalId);
-        showSuccessMessage();
       }
     }
   }, 500);
@@ -58,8 +64,9 @@ async function pushAuctionData(id) {
     lotsControl.value = data.lots;
     priceControl.value = data.price;
     pushButton.click();
-    await postService.sendRuntimeMessage('removeAuctionData', { id });
-    return data;
+    const pushedData = { ...data, pushTimestamp: Date.now() };
+    await postService.sendRuntimeMessage('saveAuctionData', { data: pushedData });
+    return pushedData;
   }
 }
 
@@ -75,22 +82,4 @@ function checkCountdownFinished() {
   }
   console.log('Is countdown finished: ', isCountdownFinished);
   return isCountdownFinished;
-}
-
-function showSuccessMessage() {
-  const div = document.createElement('div');
-  div.innerText = 'Данные отправлены';
-  div.style.padding = '16px';
-  div.style.fontSize = '14px';
-  div.style.fontFamily = 'Arial, sans-serif';
-  div.style.boxSizing = 'border-box';
-  div.style.fontWeight = '400';
-  div.style.lineHeight = '1.2em';
-  div.style.backgroundColor = '#0b546a';
-  div.style.color = '#ffffff';
-  div.style.position = 'fixed';
-  div.style.bottom = '0';
-  div.style.right = '0';
-  document.body.appendChild(div);
-  setTimeout(() => div.remove(), 3000);
 }
