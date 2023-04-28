@@ -9,7 +9,9 @@ postService.onRuntimeMessage({
   getActiveAuctionId,
   getAuctionData,
   saveAuctionData,
-  removeAuctionData
+  removeAuctionData,
+  saveAuctionParsedData,
+  getAuctionParsedData
 });
 
 function saveAuctionPage(context, sendRes) {
@@ -86,4 +88,28 @@ function removeAuctionData(context, sendRes) {
     storageService.removeValue(`data-${id}`);
   }
   sendRes();
+}
+
+function saveAuctionParsedData(context, sendRes) {
+  const data = context?.data;
+  if (!isNil(data)) {
+    storageService.setValue(`parsed-data-${data.id}`, data);
+  }
+  sendRes();
+}
+
+async function getAuctionParsedData(context, sendRes) {
+  try {
+    const id = context?.id;
+    if (isNil(id)) {
+      throw new Error('Auction ID is undefined');
+    }
+    const data = await storageService.getValue(`parsed-data-${id}`);
+    if (isNil(data)) {
+      throw new Error('Auction data is not found in storage');
+    }
+    sendRes({ data });
+  } catch (err) {
+    sendRes({ data: null });
+  }
 }

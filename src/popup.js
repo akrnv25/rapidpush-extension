@@ -17,7 +17,9 @@ const editView = document.getElementById('edit-view');
   }
   const dataRes = await postService.sendRuntimeMessage('getAuctionData', { id });
   const data = dataRes?.context?.data;
-  isNil(data) ? initEditView({ id }) : initMainView(data);
+  const parsedDataRes = await postService.sendRuntimeMessage('getAuctionParsedData', { id });
+  const parsedData = parsedDataRes?.context?.data;
+  isNil(data) ? initEditView({ id }, parsedData) : initMainView(data);
 })();
 
 function initNotFoundView() {
@@ -26,14 +28,14 @@ function initNotFoundView() {
   notFoundView.classList.remove('hidden');
 }
 
-function initEditView(data) {
+function initEditView(data, parsedData) {
   mainView.classList.add('hidden');
   editView.classList.remove('hidden');
   notFoundView.classList.add('hidden');
   let id = data.id;
   const idControl = document.getElementById('id-control');
   idControl.value = id ?? '';
-  let type = data.type ?? AUCTION_TYPES[0].value;
+  let type = data.type || parsedData?.type || AUCTION_TYPES[0].value;
   const typeControl = document.getElementById('type-control');
   typeControl.value = type;
   typeControl.onchange = () => (type = typeControl.value);
@@ -41,7 +43,7 @@ function initEditView(data) {
   const lotsControl = document.getElementById('lots-control');
   lotsControl.value = lots;
   lotsControl.oninput = () => (lots = lotsControl.value);
-  let price = data.price ?? '';
+  let price = data.price || parsedData?.maxPrice || '';
   const priceControl = document.getElementById('price-control');
   priceControl.value = price;
   priceControl.oninput = () => (price = priceControl.value);
