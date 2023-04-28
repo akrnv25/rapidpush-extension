@@ -11,7 +11,8 @@ postService.onRuntimeMessage({
   saveAuctionData,
   removeAuctionData,
   saveAuctionParsedData,
-  getAuctionParsedData
+  getAuctionParsedData,
+  removeParsedAuctionData
 });
 
 function saveAuctionPage(context, sendRes) {
@@ -112,4 +113,12 @@ async function getAuctionParsedData(context, sendRes) {
   } catch (err) {
     sendRes({ data: null });
   }
+}
+
+function removeParsedAuctionData(context, sendRes) {
+  const id = context?.id;
+  if (!isNil(id)) {
+    storageService.removeValue(`parsed-data-${id}`);
+  }
+  sendRes();
 }
