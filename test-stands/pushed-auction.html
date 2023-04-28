@@ -1,0 +1,854 @@
+<html><head><title>
+  Закрытый аукцион №94029  (19 апреля 2023 г. в 12:00)
+</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Cache-control" content="no-cache"><meta http-equiv="Expires" content="-1"><link href="/Scripts/font-awesome/css/font-awesome-ie7.min.css" rel="stylesheet"><link href="/Scripts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <script src="../Scripts/jquery-2.2.3.js" type="text/javascript"></script>
+  <script src="../Scripts/json2.js" type="text/javascript"></script>
+  <script src="../Scripts/jquery.numeric.js" type="text/javascript"></script>
+  <script src="../Scripts/common/common.js" type="text/javascript"></script>
+  <script src="../Scripts/jquery.jclock.js" type="text/javascript"></script>
+  <script src="../Scripts/jquery.plugin.js" type="text/javascript"></script>
+  <script src="../Scripts/jquery.countdown.js" type="text/javascript"></script>
+  <script src="../Scripts/jquery.countdown-ru.js" type="text/javascript"></script>
+  <script src="../Scripts/auction/detailsnew.js" type="text/javascript"></script>
+  <script src="../Scripts/base64.js" type="text/javascript"></script>
+  <script src="../Scripts/Security.js" type="text/javascript"></script>
+  <link href="/Scripts/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <script src="/Scripts/bootstrap/js/bootstrap.js"></script>
+  <script src="/Scripts/jquery.inherit.js"></script>
+  <script src="/Scripts/knockout/knockout-3.2.0.js"></script>
+  <script src="/Scripts/knockout/knockout.mapping-latest.js"></script>
+  <link href="/Scripts/loading/jquery.loading.min.css" rel="stylesheet">
+  <script src="/Scripts/loading/jquery.loading.min.js"></script>
+  <script src="/Scripts/JSViewUserControl.js"></script>
+  <link href="../App_Themes/EOIL/EOIL.css" type="text/css" rel="stylesheet"><script type="text/javascript" src="/Scripts/loading/jquery.loading.min.js"></script><link type="text/css" rel="stylesheet" href="/Scripts/loading/jquery.loading.min.css"><script type="text/javascript" src="/Scripts/loading/jquery.loading.min.js"></script><link type="text/css" rel="stylesheet" href="/Scripts/loading/jquery.loading.min.css"><script type="text/javascript" src="/Scripts/loading/jquery.loading.min.js"></script><link type="text/css" rel="stylesheet" href="/Scripts/loading/jquery.loading.min.css"></head>
+<body>
+<div class="loading-overlay loading-theme-light" style="display: none;">
+  <div class="loading-overlay-content" style="width: 150px; height: 150px;">
+    <i class="icon-spinner icon-spin icon-large"></i>
+    Загрузка...
+  </div>
+</div>
+
+<div style="padding: 5px;">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="caption" role="tab" id="headingOne">
+        Закрытый аукцион №94029 (19 апреля 2023 г. в 12:00)
+        <h5 style="display: inline;">
+          <small id="text-auction-state" class="text-success">
+            <i class="icon-circle"></i>
+            <span>Активный</span>
+          </small>
+        </h5>
+        <div class="pull-right" style="margin-left: 10px;">
+          <a data-toggle="collapse" data-parent="#accordion" href="#details" aria-expanded="true" aria-controls="details" style="font-weight:normal;color:#555;" onclick="var ch = $(this).children('i'); ch.hasClass('icon-angle-down') ? ch.removeClass().addClass('icon-angle-up') : ch.removeClass().addClass('icon-angle-down');">
+            <i class="icon-angle-up"></i>
+          </a>
+        </div>
+        <div class="pull-right" style="font-size: 12px; font-weight: normal;">
+          <div id="Log">
+            <script src="/Scripts/Main/_LogWithPopups.js"></script>
+            <link href="/Scripts/pnotify/pnotify.custom.min.css" rel="stylesheet">
+            <script src="/Scripts/pnotify/pnotify.custom.min.js"></script>
+            <div class="btn-group">
+              <button data-bind="attr: { title: started() ? 'Выключить' : 'Включить' }, event: { click: switchLog } " title="Выключить" class="btn btn-default btn-xs">
+                <i class="icon-comments-alt text-success" data-bind="css: $root.popoverBtnClass"></i>
+              </button>
+              <button id="popoverBtn" data-bind="event: { click: showHideLog }" type="button" class="btn btn-default btn-xs" data-toggle="button">
+                <span class="caret"></span>
+              </button>
+            </div>
+            <div id="popoverLog" class="fade panel panel-default" style="display: none; position: fixed; background-color: white; z-index: 2000;">
+              <div class="panel-body">
+                <div id="LogTail" style="border: 1px solid DarkGray; width: 250px; height: 150px; overflow: auto;" data-bind="template: { name: 'LogItemTemplate', foreach: Items, afterRender: $root.onItemRender }">
+                  <div data-bind="css: $root.textClass($data) " class="text-info">
+                    <span style="font-weight: bold" data-bind="text: Time + ':'">12:00:00:</span>
+                    <span data-bind="text: Message">Ваша ставка принята. Цена: 3563, объём: 1.</span>
+                  </div>
+
+                  <div data-bind="css: $root.textClass($data) " class="text-info">
+                    <span style="font-weight: bold" data-bind="text: Time + ':'">12:00:00:</span>
+                    <span data-bind="text: Message">Оферта принята в кол-ве лотов 1 (цена: 3563, объем: 1). Сыграла ставка 12:00:00.</span>
+                  </div>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" data-bind="checked: $root.showPopups"> Всплывающие сообщения
+                  </label>
+                </div>
+              </div>
+            </div>
+            <script id="LogItemTemplate" type="text/html">
+              <div data-bind="css: $root.textClass($data) " >
+        <span style="font-weight: bold" data-bind="text: Time + ':'">
+        </span>
+                <span data-bind="text: Message">
+        </span>
+              </div>
+            </script>
+          </div><script type="text/javascript">
+          $(document).ready(function() {var obj = new IDK.Web._LogWithPopups({"elementId":"Log","options":{"url":"/Auction/GetLogMessages","data":{"tradeId":94029,"tickAfter":null}},"loginUrl":"/Login/Index"})});
+        </script>
+        </div>
+      </div>
+      <div id="details" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <div class="col-xs-7">
+            <div class="row">
+              <label class="control-label">
+                <small>Организатор:</small>
+              </label>
+              <span style="color: #ff8426">
+ООО «Газпром ГНП холдинг»
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Операция:</small>
+              </label>
+              <span style="color: firebrick;">
+Продажа
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Товар:</small>
+              </label>
+              <span style="font-weight: bold;">
+<span style="color: Black;">Гелий газообразный</span>
+<a target="_blank" style="color: Black;" href="/Trade/Offer?Id=93254" title="Переход на заявку">
+<i class="icon-external-link"></i>
+</a>
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Объем:</small>
+              </label>
+              <span>
+<span style="font-weight: bold">
+ 2420 куб. м.
+</span>
+<span style="font-size:11px;color:#777777">
+(2420 лотов по 1 куб. м.)
+</span>
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Стартовая цена:</small>
+              </label>
+              <span>
+<span style="font-weight: bold">
+3563
+руб/куб. м.</span>
+<span style="font-size:11px;color:#777777">
+с шагом
+1
+руб
+</span>
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Мин. цена:</small>
+              </label>
+              <span>
+3385
+руб/куб. м.
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Макс. цена:</small>
+              </label>
+              <span>
+3741
+руб/куб. м.
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>НДС:</small>
+              </label>
+              <span>
+20%
+</span>
+            </div>
+          </div>
+          <div class="col-xs-5">
+            <div class="row">
+              <label class="control-label">
+                <small>Производитель:</small>
+              </label>
+              <span>
+ООО «Газпром переработка»
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Регион:</small>
+              </label>
+              <span>
+Российская Федерация
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Базис:</small>
+              </label>
+              <span>
+11203-Оренбургский гелиевый завод ООО «Газпром переработка»/Склад
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Условия поставки:</small>
+              </label>
+              <span>
+EXW - Франко завод/склад
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Условия оплаты:</small>
+              </label>
+              <span>
+100% предоплата
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Срок поставки:</small>
+              </label>
+              <span>
+30 дн
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Тип аукциона:</small>
+              </label>
+              <span>
+"Бета"
+</span>
+            </div>
+            <div class="row">
+              <label class="control-label">
+                <small>Время аукциона (+03:00):</small>
+              </label>
+              <span class="text-warning">
+<strong>
+12:00
+-
+12:30
+</strong>
+19 апреля 2023 г.
+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="nav nav-tabs" id="auctionTab" role="tablist">
+    <li class="active" role="presentation">
+      <a id="trade-tab" role="tab" aria-expanded="true" aria-controls="trade" href="#trade" data-toggle="tab">
+        Торги
+      </a>
+    </li>
+    <li role="presentation">
+      <a id="guarantees-tab" role="tab" aria-expanded="false" aria-controls="profile" href="#guarantees" data-toggle="tab" class="text-success">
+        <i class="icon-ok-sign"></i>
+        Гарантии
+      </a>
+    </li>
+    <li role="presentation">
+      <a id="goods-tab" class="hide" role="tab" aria-expanded="true" aria-controls="goods" href="#goods" data-toggle="tab">
+        Выбор
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="trade">
+      <div id="AuctionData">
+        <script src="/Scripts/knockout/validation/knockout.validation.js"></script>
+        <script src="/Scripts/knockout/validation/ru-RU.js"></script>
+        <script src="/Scripts/Auction/_Auction.js"></script>
+        <script src="/Scripts/countdown/jquery.plugin.min.js"></script>
+        <script src="/Scripts/countdown/jquery.countdown.min.js"></script>
+        <script src="/Scripts/countdown/jquery.countdown-ru.js"></script>
+        <link href="/Scripts/countdown/jquery.countdown.css" rel="stylesheet">
+        <div id="AuctionArea" class="container-fluid" data-bind="template: { name: DisplayTemplate, afterRender: afterRenderTemplate }">
+          <div class="row">
+
+            <!-- ko if: IsActive() ||  !CurrentUserIsOwner -->
+            <div class="col-xs-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+
+                  <strong data-bind="text: CurrentUserIsOwner ? '&nbsp;' : 'Ордера ' + CurrentOrganization.Name, attr: { 'id': CurrentUserIsOwner ? 'clock' : '' }" id="">Ордера ООО "РЕМКОМСЕРВИС"</strong>
+
+                  <span style="margin-left: 10px;" data-bind="template: { name: 'AdditionalTemplate', data: AdditionalInfo }">
+    <!-- ko if: $root.NowData.manualEntry() --><!-- /ko -->
+                    <!-- ko if: $data.Balance --><!-- /ko -->
+                    <!-- ko if: $root.CurrentPrice() != -1 -->
+        <span class="label label-default">
+            <span>Текущая цена: </span>
+            <strong data-bind="text: $root.CurrentPrice">3563</strong><strong> ₽</strong>
+        </span>
+                    <!-- /ko -->
+</span>
+
+                </div>
+                <!-- ko if: !CurrentUserIsOwner -->
+                <!-- ko template: { name: DisplayBidsTemplate, afterRender: afterRenderTemplate } -->
+                <table class="table table-condensed table-striped text-center">
+                  <colgroup>
+                    <col style="width: 25%;">
+                    <col style="width: 20%;">
+                    <col style="width: 15%;">
+                    <col style="width: 20%;">
+                    <col style="width: 20%;">
+                  </colgroup>
+                  <thead>
+                  <!-- ko if: IsActive() -->
+                  <tr data-bind="with: NowData">
+                    <th title="Текущее время" class="text-center">
+                      <span id="clock" currenttime="1681895053085">12:04:13</span>
+                      <small id="countdownClock" class="text-muted"></small>
+                    </th>
+                    <th title="Количество лотов">
+                      <input type="text" class="form-control text-center input-xs" data-bind="textInput: LotCount, event: { focus: $root.focusLotCount, blur: $root.blurLotCount }">
+                    </th>
+                    <th title="Текущий объём" class="text-center text-middle text-normal" data-bind="text: CurrentVolume">1</th>
+
+                    <th colspan="3" class="col-xs-12">
+                      <div class="input-group input-group-xs">
+                        <span class="input-group-btn" data-bind="visible: !$root.CurrentUserIsOwner">
+                            <button id="manualEntryBtn" data-toggle="button" data-placement="top" title="Вкл./откл. автоторгов" class="btn btn-default btn-xs" type="button" data-bind="click: onManualEntry">
+                                <i class="icon-edit" data-bind="css: { 'text-success': manualEntry }"></i>
+                            </button>
+                        </span>
+                        <input type="text" class="form-control text-center input-xs" data-bind="textInput: CurrentPrice, event: { focus: $root.focusCurrentPrice, blur: $root.blurCurrentPrice }" title="Ставка">
+                        <span class="input-group-btn" data-bind="visible: !$root.CurrentUserIsOwner">
+                            <button data-toggle="tooltip" data-placement="top" title="Подтвердить ордер" class="btn btn-default btn-xs" type="button" data-bind="click: $root.bid, disable: !isValid() || $root.bidding()">
+
+                                <img style="width: 12px; height: 12px;" src="/Images/enter-16.png">
+                            </button>
+                        </span>
+                      </div>
+
+                    </th>
+                  </tr>
+                  <!-- /ko -->
+                  <tr data-bind="with: TotalOfUser">
+                    <th class="text-center">
+                      Время<br>
+                      <small class="text-success">Итого:</small>
+                    </th>
+                    <th class="text-center">
+                      Лоты<br>
+                      <small data-bind="text: LotCount" class="text-success">1</small>
+                    </th>
+                    <th class="text-center">
+                      Объём<br>
+                      <small data-bind="text: Volume" class="text-success">1</small>
+                    </th>
+                    <th class="text-center">
+                      Цена<br>
+                      <small data-bind="text: Price" class="text-success">3563</small>
+                    </th>
+                    <th class="text-center">
+                      Ставка<br>
+                      <small data-bind="text: BidPrice" class="text-success">3563</small>
+                    </th>
+                    <th class="text-center">
+                      ±<br>
+                      <small>&nbsp;</small>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody data-bind="template: { name:  'BidRowTemplate', foreach: Bids } ">
+                  <tr data-bind="visible: IsActive() || IsPlaying(), css: { 'success': IsPlaying }" class="success">
+                    <td data-bind="text: Date">12:00:00</td>
+                    <td data-bind="text: DealsInfo.Count() + '/' + LotCount()">1/1</td>
+                    <td data-bind="text: Volume">1</td>
+                    <td data-bind="text: DealsInfo.Price">3563</td>
+                    <td>
+                      <span data-bind="text: Price, css: { 'text-muted': !IsActive() &amp;&amp; $root.IsActive() }" class="">3563</span>
+                      <a class="pull-right text-danger" data-bind="event: { click: $root.startStopBid }, visible: $root.IsActive() &amp;&amp; DealsInfo.Price() != Price(), disable: IsActive() == null, css: { 'text-danger': IsActive(), 'text-success': !IsActive() }, attr: { 'title': IsActive() ? 'Выключить ставку' : 'Включить ставку' }" title="Выключить ставку" style="display: none;">
+                        <i data-bind="css: { 'icon-minus-sign': IsActive(), 'icon-ok-sign': !IsActive() } " class="icon-minus-sign"></i>
+                      </a>
+                    </td>
+                    <td data-bind="text: $root.getMargin(Price()), style: { color: $root.getMargin(Price()) > 0 ? 'green' : $root.getMargin(Price()) < 0 ? 'red' : 'black' }" style="font-size: 0.8em; color: black;">0</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <!-- /ko -->
+                <!-- /ko -->
+
+              </div>
+            </div>
+            <!-- /ko -->
+            <div class="col-xs-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <strong data-bind="text: $root.Status().Name == 'Completed' ? 'Сделки' : 'Оферты'">Оферты</strong>
+                  <a class="pull-right" style="cursor: pointer; display: none;" data-bind="attr: { href: '/Auction/Protocol?Id=' + $root.Auction.Id }, visible: $root.hasAccessProtocol " target="_blank" href="/Auction/Protocol?Id=94029">
+                    Протокол
+                    <i class="icon-external-link"></i>
+                  </a>
+                </div>
+                <!-- ko template: { name: 'DealsTemplate' } -->
+                <table class="table table-condensed table-striped  text-center">
+                  <colgroup>
+                    <col style="width: 30%;">
+                    <col style="width: 10%;">
+                    <col style="width: 20%;">
+                    <col style="width: 37%;">
+                    <col style="width: 3%;">
+                  </colgroup>
+                  <thead>
+                  <tr data-bind="with: Total">
+                    <th class="text-center">
+                      Время<br>
+                      <small class="text-success">Итого:</small>
+                    </th>
+                    <th class="text-center">
+                      Лоты<br>
+                      <small data-bind="text: LotCount" class="text-success">1</small>
+                    </th>
+                    <th class="text-center">
+                      Объём<br>
+                      <small data-bind="text: Volume" class="text-success">1</small>
+                    </th>
+                    <th class="text-center">
+                      Цена<br>
+                      <small data-bind="text: Price" class="text-success">3563</small>
+                    </th>
+                    <th class="text-center">
+                      ±<br>
+                      <small>&nbsp;</small>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody data-bind="template: { name: 'DealRowTemplate', foreach: Deals }">
+                  <tr data-bind="css: { 'success': $root.UserId == UserId }" class="success">
+                    <td style="text-align: center;" data-bind="text: Date">12:00:00</td>
+                    <td data-bind="text: LotCount">1</td>
+                    <td data-bind="text: Volume">1</td>
+                    <td>
+                      <span data-bind="text: Price">3563</span>
+                    </td>
+                    <td data-bind="text: $root.getMargin(Price), style: { color: $root.getMargin(Price) > 0 ? 'green' : $root.getMargin(Price) < 0 ? 'red' : 'black' }" style="font-size: 0.8em; color: black;">0</td>
+                  </tr>
+
+                  </tbody>
+                </table>
+                <!-- /ko -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <script id="MainTemplate" type="text/template">
+          <div class="row">
+
+            <!-- ko if: IsActive() ||  !CurrentUserIsOwner -->
+            <div class="col-xs-6" >
+              <div  class="panel panel-default">
+                <div class="panel-heading">
+
+                  <strong data-bind="text: CurrentUserIsOwner ? '&nbsp;' : 'Ордера ' + CurrentOrganization.Name, attr: { 'id': CurrentUserIsOwner ? 'clock' : '' }"></strong>
+
+                  <span style="margin-left: 10px;" data-bind="template: { name: 'AdditionalTemplate', data: AdditionalInfo }">
+
+                    </span>
+
+                </div>
+                <!-- ko if: !CurrentUserIsOwner -->
+                <!-- ko template: { name: DisplayBidsTemplate, afterRender: afterRenderTemplate } -->
+                <!-- /ko -->
+                <!-- /ko -->
+
+              </div>
+            </div>
+            <!-- /ko -->
+            <div class="col-xs-6">
+              <div  class="panel panel-default">
+                <div class="panel-heading">
+                  <strong data-bind="text: $root.Status().Name == 'Completed' ? 'Сделки' : 'Оферты'"></strong>
+                  <a class="pull-right" style="cursor: pointer;" data-bind="attr: { href: '/Auction/Protocol?Id=' + $root.Auction.Id }, visible: $root.hasAccessProtocol " target="_blank">
+                    Протокол
+                    <i class="icon-external-link"></i>
+                  </a>
+                </div>
+                <!-- ko template: { name: 'DealsTemplate' } -->
+                <!-- /ko -->
+              </div>
+            </div>
+          </div>
+        </script>
+        <script id="BidsTemplate" type="text/template">
+          <table class="table table-condensed table-striped text-center">
+            <colgroup>
+              <col style="width: 25%;" />
+              <col style="width: 20%;" />
+              <col style="width: 15%;" />
+              <col style="width: 20%;" />
+              <col style="width: 20%;" />
+            </colgroup>
+            <thead>
+            <!-- ko if: IsActive() -->
+            <tr data-bind="with: NowData">
+              <th title="Текущее время" class="text-center">
+                <span id="clock"></span>
+                <small id="countdownClock" class="text-muted"></small>
+              </th>
+              <th title="Количество лотов" >
+                <input type="text"  class="form-control text-center input-xs" data-bind="textInput: LotCount, event: { focus: $root.focusLotCount, blur: $root.blurLotCount }"/>
+              </th>
+              <th title="Текущий объём" class="text-center text-middle text-normal" data-bind="text: CurrentVolume">
+              </th>
+
+              <th colspan="3" class="col-xs-12">
+                <div class="input-group input-group-xs">
+                        <span class="input-group-btn" data-bind="visible: !$root.CurrentUserIsOwner">
+                            <button id="manualEntryBtn" data-toggle="button" data-placement="top" title="Вкл./откл. автоторгов" class="btn btn-default btn-xs" type="button" data-bind="click: onManualEntry">
+                                <i class="icon-edit" data-bind="css: { 'text-success': manualEntry }"></i>
+                            </button>
+                        </span>
+                  <input type="text" class="form-control text-center input-xs" data-bind="textInput: CurrentPrice, event: { focus: $root.focusCurrentPrice, blur: $root.blurCurrentPrice }" title="Ставка"/>
+                  <span class="input-group-btn" data-bind="visible: !$root.CurrentUserIsOwner">
+                            <button data-toggle="tooltip" data-placement="top" title="Подтвердить ордер" class="btn btn-default btn-xs" type="button" data-bind="click: $root.bid, disable: !isValid() || $root.bidding()">
+
+                                <img style="width: 12px; height: 12px;" src="/Images/enter-16.png" />
+                            </button>
+                        </span>
+                </div>
+
+              </th>
+            </tr>
+            <!-- /ko -->
+            <tr  data-bind="with: TotalOfUser">
+              <th class="text-center">
+                Время<br/>
+                <small class="text-success">Итого:</small>
+              </th>
+              <th class="text-center">
+                Лоты<br/>
+                <small data-bind="text: LotCount" class="text-success"></small>
+              </th>
+              <th class="text-center">
+                Объём<br/>
+                <small data-bind="text: Volume" class="text-success"></small>
+              </th>
+              <th class="text-center">
+                Цена<br/>
+                <small data-bind="text: Price" class="text-success"></small>
+              </th>
+              <th class="text-center">
+                Ставка<br/>
+                <small data-bind="text: BidPrice" class="text-success"></small>
+              </th>
+              <th class="text-center">
+                ±<br/>
+                <small>&nbsp;</small>
+              </th>
+            </tr>
+            </thead>
+            <tbody data-bind="template: { name:  'BidRowTemplate', foreach: Bids } ">
+
+            </tbody>
+          </table>
+        </script>
+        <script id="DealsTemplate" type="text/template">
+          <table class="table table-condensed table-striped  text-center">
+            <colgroup>
+              <col style="width: 30%;" />
+              <col style="width: 10%;" />
+              <col style="width: 20%;" />
+              <col style="width: 37%;" />
+              <col style="width: 3%;" />
+            </colgroup>
+            <thead>
+            <tr data-bind="with: Total">
+              <th class="text-center">
+                Время<br/>
+                <small class="text-success">Итого:</small>
+              </th>
+              <th class="text-center">
+                Лоты<br/>
+                <small data-bind="text: LotCount" class="text-success"></small>
+              </th>
+              <th class="text-center">
+                Объём<br/>
+                <small data-bind="text: Volume" class="text-success"></small>
+              </th>
+              <th class="text-center">
+                Цена<br/>
+                <small data-bind="text: Price" class="text-success"></small>
+              </th>
+              <th class="text-center">
+                ±<br/>
+                <small>&nbsp;</small>
+              </th>
+            </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'DealRowTemplate', foreach: Deals }">
+
+            </tbody>
+          </table>
+        </script>
+        <script id="NotHasAsccessTemplate" type="text/template">
+          <div style="font-weight: bold; margin: 10px;">Гарантии для участия в аукционе не подтверждены</div>
+        </script>
+        <script id="EmptyTemplate" type="text/template">
+          <div style="font-weight: bold; margin: 10px;"></div>
+        </script>
+        <script id="CancelTemplate" type="text/template">
+          <div style="font-weight: bold; margin: 10px;">Аукцион был отменён.</div>
+        </script>
+        <script id="NotPlayingTemplate" type="text/template">
+          <div style="font-weight: bold; margin: 10px;">Вы не принимали участия в аукционе</div>
+        </script>
+        <script id="NotWinnerTemplate" type="text/template">
+          <div style="font-weight: bold; margin: 10px;">Вы не смогли купить объёмы на аукционе</div>
+        </script>
+        <script id="CreatingTemplate" type="text/template">
+          <div style="font-weight: bold; margin: 10px;">Аукцион на этапе "Формирование"</div>
+        </script>
+        <script id="AdditionalTemplate" type="text/template">
+          <!-- ko if: $root.NowData.manualEntry() -->
+          <span class="label label-success">
+            Автоторги
+        </span>
+          <!-- /ko -->
+          <!-- ko if: $data.Balance -->
+          <span class="label label-primary">
+            <span>Остаток средств: </span>
+            <strong data-bind="text: Balance"></strong>
+        </span>
+          <!-- /ko -->
+          <!-- ko if: $root.CurrentPrice() != -1 -->
+          <span class="label label-default">
+            <span>Текущая цена: </span>
+            <strong data-bind="text: $root.CurrentPrice"></strong><strong> ₽</strong>
+        </span>
+          <!-- /ko -->
+        </script>
+        <script id="CountdownTemplate" type="text/template">
+          <div class="row">
+            <div  class="col-xs-6 col-xs-offset-3">
+              <div  class="panel panel-default">
+                <div class="panel-heading"><strong>До начала аукциона осталось</strong></div>
+                <div class="row">
+                  <div id="countdown" class="countdown"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <script id="BidRowTemplate" type="text/template">
+          <tr data-bind="visible: IsActive() || IsPlaying(), css: { 'success': IsPlaying }">
+            <td data-bind="text: Date"></td>
+            <td data-bind="text: DealsInfo.Count() + '/' + LotCount()"></td>
+            <td data-bind="text: Volume"></td>
+            <td data-bind="text: DealsInfo.Price"></td>
+            <td>
+              <span  data-bind="text: Price, css: { 'text-muted': !IsActive() && $root.IsActive() }"></span>
+              <a class="pull-right" data-bind="event: { click: $root.startStopBid }, visible: $root.IsActive() && DealsInfo.Price() != Price(), disable: IsActive() == null, css: { 'text-danger': IsActive(), 'text-success': !IsActive() }, attr: { 'title': IsActive() ? 'Выключить ставку' : 'Включить ставку' }">
+                <i data-bind="css: { 'icon-minus-sign': IsActive(), 'icon-ok-sign': !IsActive() } "></i>
+              </a>
+            </td>
+            <td data-bind="text: $root.getMargin(Price()), style: { color: $root.getMargin(Price()) > 0 ? 'green' : $root.getMargin(Price()) < 0 ? 'red' : 'black' }" style="font-size: 0.8em;">
+            </td>
+          </tr>
+        </script>
+        <script id="DealRowTemplate" type="text/template">
+          <tr data-bind="css: { 'success': $root.UserId == UserId }">
+            <td style="text-align: center;" data-bind="text: Date"></td>
+            <td data-bind="text: LotCount"></td>
+            <td data-bind="text: Volume"></td>
+            <td>
+              <span  data-bind="text: Price"></span>
+            </td>
+            <td data-bind="text: $root.getMargin(Price), style: { color: $root.getMargin(Price) > 0 ? 'green' : $root.getMargin(Price) < 0 ? 'red' : 'black' }" style="font-size: 0.8em;">
+            </td>
+          </tr>
+
+        </script>
+      </div><script type="text/javascript">
+      $(document).ready(function() {var obj = new IDK.Web.Controllers._Auction({"elementId":"AuctionData","options":{"url":"/Auction/GetAuctionData","data":{"Auction":{"Id":94029,"Price":3563.00,"Volume":2420.0,"VolumeMin":1.0,"PriceMin":3385.00,"PriceMax":3741.00,"StartDate":"2023-04-19T12:00:00.0000000+03:00","EndDate":"2023-04-19T12:30:00.0000000+03:00","BidAsk":true,"HasAccess":true,"LotCount":2420.0,"StepBidding":1.00},"HasExtendedAccess":false,"UserId":208695,"NeedSignature":false,"Thumbprint":"","CurrentUserIsOwner":false,"CurrentOrganization":{"Id":207844,"Name":"ООО \"РЕМКОМСЕРВИС\""}}},"loginUrl":"/Login/Index"})});
+    </script>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="goods">
+      <div id="GoodsData">
+        <script src="/Scripts/knockout/validation/knockout.validation.js"></script>
+        <script src="/Scripts/knockout/validation/ru-RU.js"></script>
+        <script src="/Scripts/Auction/_Goods.js"></script>
+        <div class="container-fluid">
+          <div class="row" data-bind="if: ShowFinalDocs">
+            <div class="col-xs-12">
+              <a class="pull-right" style="cursor: pointer;" data-bind="attr: { href: ProtocolUrl }, visible: $root.hasAccessProtocol " target="_blank">
+                Протокол
+                <i class="icon-external-link"></i>
+              </a>
+            </div>
+          </div>
+          <div class="row" data-bind="if: ShowFinalDocs">
+            <div class="col-xs-12">
+              <div class="panel panel-default">
+                <table class="table table-condensed">
+                  <colgroup>
+                    <col style="width: 20%;">
+                    <col style="width: 30%;">
+                    <col style="width: 10%;">
+                    <col style="width: 10%;">
+                    <col style="width: 20%;">
+                  </colgroup>
+                  <thead>
+                  <tr>
+                    <th class="text-center" style="border-right: 1px solid #ddd;">
+                      Участник
+                    </th>
+                    <th class="text-center">
+                      Товар
+                    </th>
+                    <th class="text-center" data-bind="text: 'Объём, ' + Unit">
+                    </th>
+                    <th class="text-center" data-bind="text: 'Цена, руб./' + Unit">
+                    </th>
+                    <th class="text-center" data-bind="text: 'Сумма, руб./' + Unit">
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody data-bind="foreach: { data: TradeResults, as: 'TR' }">
+                  <!-- ko foreach: { data: TR.Results, as: 'Result' } -->
+                  <tr style="font-weight: bold;" data-bind="css: { 'text-danger': Result.isError() }">
+                    <!-- ko if: $index() == 0 -->
+                    <td class="text-center" style="border-right: 1px solid #ddd;" data-bind="attr: { rowspan: $root.calcRowspan($parent) }">
+                      <a style="color: black;" data-bind="text: TR.Organization.Name, attr: { href: $root.ProtocolUrl + '&amp;forOrgId=' + TR.Organization.Id() }" target="_blank">
+                      </a>
+                    </td>
+                    <!-- /ko -->
+                    <td>
+                      <!-- ko if: $root.forEdit() -->
+                      <a style="cursor: pointer; padding: 5px;" data-bind="event: { click: $root.addGoods }">+</a>
+                      <!-- /ko -->
+                      <span data-bind="text: Goods.Name"></span>
+                    </td>
+                    <td class="text-center" data-bind="text: Volume"></td>
+                    <td class="text-center" data-bind="text: Price"></td>
+                    <td class="text-center" data-bind="text: Price() * Volume()"></td>
+                  </tr>
+                  <!-- ko foreach: Result.Childs -->
+                  <tr>
+                    <td style=" border: 0; padding-left: 20px;">
+                      <!-- ko ifnot: $root.forEdit() -->
+                      <!-- ko if: $root.Auction.TradeResultTypeId == 2 -->
+                      <span>- </span><span data-bind="text: Goods.Name"></span>
+                      <!-- /ko -->
+                      <!-- ko if: $root.Auction.TradeResultTypeId == 3 -->
+                      <span>- </span><span data-bind="text: Transport.Name"></span>
+                      <!-- /ko -->
+                      <!-- /ko -->
+                      <!-- ko if: $root.forEdit() -->
+                      <a style="cursor: pointer; padding: 5px;" data-bind="event: { click: $root.delGoods }">-</a>
+                      <!-- ko if: $root.Auction.TradeResultTypeId == 2 -->
+                      <select data-bind="options: $root.Goods, optionsValue: 'Id', optionsText: 'Name', value: Goods.Id, event: { change: $root.calcPrice }"></select>
+                      <!-- /ko -->
+                      <!-- ko if: $root.Auction.TradeResultTypeId == 3 -->
+                      <select data-bind="options: $root.Transports(), optionsValue: 'Id', optionsText: 'Name', value: Transport.Id, event: { change: $root.calcPrice }"></select>
+                      <!-- /ko -->
+                      <!-- /ko -->
+                    </td>
+                    <td class="text-center" style="border: 0;">
+                      <!-- ko ifnot: $root.forEdit() -->
+                      <span data-bind="text: Volume"></span>
+                      <!-- /ko -->
+                      <!-- ko if: $root.forEdit() -->
+                      <input class="text-center" data-bind="value: Volume, event: { change: $root.calcPrice, focus: function (d, e) { e.target.select(); } }">
+                      <!-- /ko -->
+                    </td>
+                    <td class="text-center" style="border: 0;" data-bind="text: Price">
+                    </td>
+                    <td class="text-center" style="border: 0;" data-bind="text: Price() * Volume()">
+                    </td>
+                  </tr>
+                  <!-- /ko -->
+                  <!-- /ko -->
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <td></td>
+                    <td colspan="4">Всего <strong data-bind="text: TotalVolume"></strong>&nbsp;<strong data-bind="text: Unit"></strong> из <strong data-bind="text: Auction.Volume.toString() + ' '+ Unit"></strong> на общую сумму <strong data-bind="text: TotalPrice() + ' руб.'"></strong></td>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+            </div>
+          </div>
+          <div class="row" data-bind="ifnot: ShowFinalDocs">
+            <div class="col-xs-12">
+              Идёт подведение итогов...
+            </div>
+          </div>
+        </div>
+        <!-- ko if: $root.forEdit() && $root.TotalVolume() -->
+        <div class="container-fluid">
+          <div class="well-sm row">
+            <div class="col-xs-10 text-muted" data-bind="text: $root.info.text, css: $root.info.css">
+            </div>
+            <div class="col-xs-2">
+              <button data-bind="event: { click: $root.save }, enable: $root.enableBtn" title="Подтвердить список товаров" class="btn btn-default btn-xs">Подтвердить</button>
+            </div>
+          </div>
+        </div>
+        <!-- /ko -->
+      </div><script type="text/javascript">
+      $(document).ready(function() {var obj = new IDK.Web.Controllers._Goods({"elementId":"GoodsData","options":{"url":"/Auction/GetTradeResults","data":{"Auction":{"Id":94029,"Price":3563.00,"Volume":2420.0,"TradeResultTypeId":2},"AutoFill":false,"HasExtendedAccess":false,"CurrentUserIsOwner":false,"ForEdit":false,"Unit":"куб. м.","ProtocolUrl":"/Auction/Protocol?Id=94029","ShowProtocolLink":true}},"loginUrl":"/Login/Index"})});
+    </script>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="guarantees">
+      <table class="table">
+        <colgroup>
+          <col style="width: 10%;">
+          <col style="width: 20%;">
+          <col style="width: 70%;">
+        </colgroup>
+        <thead>
+        <tr>
+          <th class="text-center">
+            <i class="icon-ok-sign text-success"></i>
+            <i class="icon-minus-sign text-danger"></i>
+          </th>
+          <th>Тип</th>
+          <th>Описание</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="text-center">
+            <i class="icon-ok-sign text-success"></i>
+          </td>
+          <td>
+            Договор
+          </td>
+          <td>
+            <a style="color: inherit; text-decoration: none;" target="_blank" href="/Document/Contract?Id=1644">
+              Договор поставки гелия газообразного через ЭТП
+              <i class="icon-external-link"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+</body></html>
