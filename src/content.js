@@ -6,18 +6,21 @@ console.log('Content script connected');
 document.addEventListener('DOMContentLoaded', async () => {
   const searchParams = new URL(document.location).searchParams;
   const id = searchParams.get('Id');
+  console.log('Found ID: ', id);
   if (isNil(id)) {
     console.log('ID is undefined');
     return;
   }
   const dataRes = await postService.sendRuntimeMessage('getAuctionData', { id });
   const data = dataRes?.context?.data;
+  console.log('Auction data: ', data);
   if (!isNil(data?.pushTimestamp)) {
     console.log('Auction data pushed');
     console.log('Pushed data: ', data);
     return;
   }
   await parseAuctionData(id);
+  console.log('Interval started');
   const intervalId = setInterval(async () => {
     const isCountdownFinished = checkCountdownFinished();
     if (isCountdownFinished) {
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         clearInterval(intervalId);
       }
     }
-  }, 500);
+  }, 100);
 });
 
 async function parseAuctionData(id) {
@@ -58,8 +61,11 @@ async function pushAuctionData(id) {
     return;
   }
   const lotsControl = document.querySelector('th[title="Количество лотов"] input');
+  console.log('Lots control: ', lotsControl);
   const priceControl = document.querySelector('input[title="Ставка"]');
+  console.log('Price control: ', priceControl);
   const pushButton = document.querySelector('button[title="Подтвердить ордер"]');
+  console.log('Push button: ', pushButton);
   if (!isNil(lotsControl) && !isNil(priceControl) && !isNil(pushButton)) {
     lotsControl.value = data.lots;
     priceControl.value = data.price;
@@ -67,6 +73,8 @@ async function pushAuctionData(id) {
     const pushedData = { ...data, pushTimestamp: Date.now() };
     await postService.sendRuntimeMessage('saveAuctionData', { data: pushedData });
     return pushedData;
+  } else {
+    console.log('Controls is not found');
   }
 }
 
